@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  backend:
+    build: backend
+    volumes:
+      - ./backend:/srv
+    ports:
+      - "3000:3000"
+  frontend:
+    build: frontend
+    volumes:
+      - ./frontend:/srv
+      - node_modules:/srv/node_modules
+    ports:
+      - "8080:8080"
+    environment:
+     - NODE_ENV="development"
+volumes:
+  node_modules:
