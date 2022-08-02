@@ -34,9 +34,9 @@ You can assume that XML files are well-formed and have the same structure as the
 
 ## Evaluation
 
-This assignment is purposefully somewhat open-ended. That's because we're interested in seeing what and how you prioritise.
+This assignment is purposefully somewhat open-ended because we're interested in seeing what and how you prioritise. That being said, consider how your implementation might handle a file upload larger (e.g. 500MB or more) than the `example.nessus` included.
 
-That being said, **we're looking for clean code that follows best practices, and it's always nice to see a user-friendly UI.**
+Additionally, we're looking for **clean code that follows best practices**, and it's always nice to see a **user-friendly UI.**
 
 Your submission doesn't have to be "perfect", the idea behind the code test is to set the stage for our follow-on discussion. So please use it show off how you would approach a problem like this. Comments or notes that explain your thought process are appreciated, too!
 
