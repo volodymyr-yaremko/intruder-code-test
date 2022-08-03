@@ -12,11 +12,7 @@ Feel free to amend the existing code if you like.
 
 ## Prerequisites
 
-Before starting this code test you should ensure that you have the following environment setup.
-
-- Ruby 2.7.5
-- Node 16.13.0
-- NPM 8.1.0
+The project includes a `docker-compose.yml` which will help setup a working environment for you (and will also be used by us when reviewing). Feel free to use this or whatever configuration you find most convenient.
 
 ## Background
 
