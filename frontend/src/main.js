@@ -1,7 +1,7 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
 import App from "./App.vue"
-import Dashboard from "./components/Dashboard.vue"
+import Reports from "./components/Reports.vue"
 
 import './assets/tailwind.css'
 
@@ -12,8 +12,8 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: "/",
-    name: "dashboard",
-    component: Dashboard,
+    name: "reports",
+    component: Reports,
   },
 ]
 
