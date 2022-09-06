@@ -1,11 +1,9 @@
 <template>
-  <b-navbar toggleable="lg" type="dark" variant="info">
-    <b-navbar-brand :to="{ name: 'dashboard' }">Coding Test</b-navbar-brand>
-  </b-navbar>
+  <div class="container">Coding Test for Drake</div>
 </template>
 
 <script>
 export default {
   name: "Dashboard",
-}
+};
 </script>
