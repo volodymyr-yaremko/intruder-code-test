@@ -7,9 +7,9 @@
         </h3>
       </div>
       <div class="space-x-8">
-        <router-link :to="{ name: 'reports' }">Reports</router-link>
-        <a href="">Plugins</a>
-        <a href="">Hosts</a>
+        <router-link :to="{ name: 'reports' }">
+          Go to Nessus import tool
+        </router-link>
       </div>
     </nav>
 
