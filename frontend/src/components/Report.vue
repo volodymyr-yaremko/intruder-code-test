@@ -8,7 +8,17 @@
       <ul class="divide-y-2 divide-gray-100">
         <li class="p-3" v-for="host in report.report_hosts" :key="host.id">
           <h2 class="text-xl mt-3">
-            <span class="uppercase font-bold">Host</span>&nbsp;({{ host.name }})
+            <router-link
+              class="text-blue-600"
+              :to="{
+                name: 'hosts.show',
+                params: { report_id: $route.params.id, id: host.id },
+              }"
+            >
+              <span class="uppercase font-bold">Host</span>&nbsp;({{
+                host.name
+              }})
+            </router-link>
           </h2>
           <p class="text-gray-500 mt-4 leading-8">{{ host.props | join }}</p>
         </li>
