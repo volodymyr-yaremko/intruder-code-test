@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container mx-auto">
     <nav class="flex justify-around py-8 mx-auto bg-white">
       <div>
         <h3 class="text-2xl font-medium text-blue-500">
