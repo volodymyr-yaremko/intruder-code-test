@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get '/reports/:id', to: 'reports#show'
+      get '/reports/:report_id/hosts/:id', to: 'report_hosts#show'
       post '/nessus/upload', to: 'nessus#upload'
     end
   end
