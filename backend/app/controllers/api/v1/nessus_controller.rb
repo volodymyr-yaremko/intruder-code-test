@@ -20,7 +20,7 @@ class Api::V1::NessusController < ApplicationController
                 end
 
                 # create a report_host on db
-                report_host = report.report_hosts.create(name: host_node.attr('name'), props: host_props.to_json)
+                report_host = report.report_hosts.create(name: host_node.attr('name'), props: host_props)
 
                 # extract all <ReportItem> node and iterate
                 host_node.css('ReportItem').each do |ri_node|
