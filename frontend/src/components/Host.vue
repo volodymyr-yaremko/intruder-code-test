@@ -10,6 +10,8 @@
           <h2 class="text-xl mt-3 font-medium">
             {{ item.protocol }}://{{ host.name }}:{{ item.port }}
           </h2>
+
+          <!-- plugin info -->
           <div
             class="
               p-4
@@ -40,25 +42,28 @@
             {{ item.plugin.name }} ({{ item.plugin.version }})
           </div>
 
+          <!-- important props -->
           <p class="mt-4 leading-8">
             <PropBadge
-              color="blue"
-              name="Service name"
-              :value="item.svc_name"
-            />
-            <PropBadge color="red" name="Severity" :value="item.severity" />
-            <PropBadge
-              color="yellow"
-              name="Risk factor"
-              :value="item.risk_factor"
+              :color="prop.color"
+              :name="prop.name | snakeToTitleCase"
+              :value="item[prop.name] | snakeToTitleCase"
+              v-for="prop in [
+                { color: 'blue', name: 'svc_name' },
+                { color: 'red', name: 'severity' },
+                { color: 'yellow', name: 'risk_factor' },
+              ]"
+              :key="prop.name"
             />
           </p>
 
+          <!-- explanatory props -->
           <dl
             class="
               text-gray-900
               divide-y divide-gray-200
               dark:text-white dark:divide-gray-700
+              mt-3
             "
           >
             <div
@@ -67,7 +72,7 @@
               :key="prop"
             >
               <dt class="mb-1 font-medium text-gray-500 dark:text-gray-400">
-                {{ prop }}
+                {{ prop | snakeToTitleCase }}
               </dt>
               <dd class="font-light">{{ item[prop] }}</dd>
             </div>
@@ -95,6 +100,17 @@ export default {
       .then(({ data }) => {
         this.host = data;
       });
+  },
+  filters: {
+    snakeToTitleCase: function (value) {
+      if (!value) return "";
+      return value
+        .split("_")
+        .map(function (item) {
+          return item.charAt(0).toUpperCase() + item.substring(1);
+        })
+        .join(" ");
+    },
   },
   components: { PropBadge },
 };
