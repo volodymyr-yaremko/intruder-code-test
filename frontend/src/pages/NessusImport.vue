@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import FileUploader from "./FileUploader.vue";
+import FileUploader from "../components/FileUploader.vue";
 
 export default {
   name: "Reports",

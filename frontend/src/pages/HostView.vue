@@ -108,7 +108,7 @@
 
 <script>
 import axios from "axios";
-import PropBadge from "./PropBadge.vue";
+import PropBadge from "../components/PropBadge.vue";
 
 export default {
   data() {
