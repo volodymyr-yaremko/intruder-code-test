@@ -2,7 +2,7 @@
   <div class="flex justify-center mt-4">
     <FileUploader
       @uploaded="nessusFileUploaded"
-      upload-url="https://httpbin.org/post"
+      upload-url="http://localhost:3000/api/v1/nessus/upload"
     />
   </div>
 </template>
@@ -14,8 +14,8 @@ export default {
   name: "Reports",
   components: { FileUploader },
   methods: {
-    nessusFileUploaded() {
-      console.log("uploaded!!!");
+    nessusFileUploaded(report) {
+      this.$router.push(`/reports/${report.id}`);
     },
   },
 };

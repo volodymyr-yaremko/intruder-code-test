@@ -70,8 +70,8 @@ export default {
             );
           }.bind(this),
         })
-        .then((res) => {
-          this.$emit("uploaded");
+        .then(({ data }) => {
+          this.$emit("uploaded", data);
           return;
         })
         .finally(() => {
