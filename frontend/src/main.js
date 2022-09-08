@@ -10,6 +10,11 @@ import './assets/tailwind.css'
 Vue.config.productionTip = false
 
 Vue.use(VueRouter)
+Vue.filter('snakeToTitleCase', function (value) {
+  if (!value) return ''
+  value = value.toString()
+  return value.charAt(0).toUpperCase() + value.slice(1)
+})
 
 const routes = [
   {
