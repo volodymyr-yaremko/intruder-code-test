@@ -5,4 +5,6 @@ class ReportItem < ApplicationRecord
     
     belongs_to :report_host
     belongs_to :plugin
+
+    paginates_per 30
 end

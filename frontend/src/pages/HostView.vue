@@ -28,7 +28,7 @@
       {{ host.name }}
     </h1>
     <div class="bg-white rounded-lg shadow my-5">
-      <ReportItemList :items="host.report_items" :host="host.name" />
+      <ReportItemList :host="host.name" :items="items" @fetch="onFetchItems" />
     </div>
   </div>
 </template>
@@ -41,7 +41,23 @@ export default {
   data() {
     return {
       host: null,
+      items: [],
     };
+  },
+  methods: {
+    onFetchItems({ page, onSuccess }) {
+      const { report_id: reportId, id } = this.$route.params;
+
+      return axios
+        .get(
+          `http://localhost:3000/api/v1/reports/${reportId}/hosts/${id}/items`,
+          { params: { page } }
+        )
+        .then(({ data }) => {
+          this.items = [...this.items, ...data];
+          if (typeof onSuccess === "function") onSuccess(page);
+        });
+    },
   },
   mounted() {
     const { report_id: reportId, id } = this.$route.params;

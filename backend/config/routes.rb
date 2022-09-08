@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get '/reports/:id', to: 'reports#show'
       get '/reports/:report_id/hosts/:id', to: 'report_hosts#show'
+      get '/reports/:report_id/hosts/:id/items', to: 'report_hosts#items'
       post '/nessus/upload', to: 'nessus#upload'
     end
   end

@@ -6,6 +6,7 @@
     :data-component="itemComponent"
     :extra-props="{ host }"
     :page-mode="true"
+    @tobottom="onScrollToBottom"
   />
 </template>
 
@@ -25,8 +26,22 @@ export default {
   },
   data() {
     return {
+      page: 1,
       itemComponent: ReportItem,
     };
+  },
+  methods: {
+    onScrollToBottom() {
+      this.$emit("fetch", {
+        page: this.page + 1,
+        onSuccess: (page) => {
+          this.page = page;
+        },
+      });
+    },
+  },
+  mounted() {
+    this.$emit("fetch", { page: this.page });
   },
   components: { VirtualList },
 };
