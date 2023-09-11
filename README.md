@@ -35,7 +35,3 @@ This assignment is purposefully somewhat open-ended because we're interested in 
 Additionally, we're looking for **clean code that follows best practices**, and it's always nice to see a **user-friendly UI.**
 
 Your submission doesn't have to be "perfect", the idea behind the code test is to set the stage for our follow-on discussion. So please use it show off how you would approach a problem like this. Comments or notes that explain your thought process are appreciated, too!
-
-## Questions?
-
-If you have any questions or want to clarify something, please open an issue on the GitLab project. This will alert our team and someone will get back to you as soon as possible.
